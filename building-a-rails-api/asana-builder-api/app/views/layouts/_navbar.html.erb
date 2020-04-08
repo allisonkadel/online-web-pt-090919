@@ -1,0 +1,18 @@
+<div class="header">
+    <div class="title">Asana Sequence Builder</div>
+    <% if current_user %>
+        <div class="username">
+            <i>welcome, <%= current_user.username %></i>
+        </div>
+    <% end %>
+    <div class="nav">
+    <div><a href="/asanas">Asanas</a></div>
+    <% if logged_in? %>
+        <div><a href="/sequences">My Sequences</a></div>
+        <div><a href="/logout">Log Out</a></div>
+    <% else %>
+        <div><a href="/signup">Sign Up</a></div>
+        <div><a href="/login">Log In</a></div>
+    <% end %>
+    </div>
+</div>

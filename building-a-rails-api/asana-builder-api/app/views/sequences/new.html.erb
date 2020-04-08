@@ -1,0 +1,9 @@
+<h2> Build a New Sequence </h2>
+
+<%= render partial: '/errors', locals: { record: @sequence } %>
+
+<%= form_for @sequence do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit "Create and Add Postures" %>
+<% end %>

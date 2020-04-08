@@ -1,0 +1,14 @@
+<h2> Add a new posture to the sequence <i><%= @sequence.name %></i> </h2>
+
+<%= render partial: '/errors', locals: { record: @posture } %>
+
+<%= form_for @posture do |f| %>
+    <%= f.label :asana %>
+    <div><%= f.collection_select :asana_id, Asana.all, :id, :name, prompt: true %></div>
+    <%= f.label :Duration %>
+    <div><%= f.number_field :duration %></div>
+    <%= f.label :Variation %>
+    <div><%= f.text_area :variation %></div>
+    <%= f.hidden_field :sequence_id, value: @sequence.id %>
+    <%= f.submit %>
+<% end %>

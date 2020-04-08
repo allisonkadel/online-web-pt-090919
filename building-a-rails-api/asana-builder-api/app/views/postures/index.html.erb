@@ -1,0 +1,13 @@
+<h2> Sequence <i><%= @sequence.name %></i> </h2>
+<%= link_to "Add New Posture", new_sequence_posture_path(@sequence) %>
+
+<div class="postures">
+    <% @sequence.postures.each.with_index(1) do |posture, index| %>
+        <div class="posture-card">
+            <h3><%= index %>. <%= posture.asana.name %></h3>
+            <p><%= posture.duration %> seconds</p>
+            <p><%= posture.variation %></p>
+            <img src=<%=posture.asana.img%>>
+        </div>
+    <% end %>
+</div>

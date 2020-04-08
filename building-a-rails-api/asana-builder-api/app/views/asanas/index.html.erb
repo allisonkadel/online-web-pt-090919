@@ -1,0 +1,24 @@
+<h2> Asanas </h2>
+<%= link_to "All Asanas", asanas_path %> |
+<%= link_to "Only Balancing Asanas", asanas_balancing_path %> |
+<%= link_to "Only Inversions", asanas_inversion_path %> |
+<%= link_to "Only Backbending Asanas", asanas_backbending_path %>
+
+<% @asanas.each do |asana| %>
+    <div class="asana-card">
+        <div class="asana-title">
+            <p><%= asana.name %></p>
+        </div>
+        <div class="asana-names">
+            <p><%= asana.sanskrit %></p>
+            <p><%= asana.english %></p>
+        </div>
+        <div class="asana-details">
+            <p><%= asana.category %></p>
+            <p><%= asana.effect_on_spine %></p>
+        </div>
+        <div class="img">
+            <img src=<%=asana.img%>>
+        </div>
+    </div>
+<% end %>

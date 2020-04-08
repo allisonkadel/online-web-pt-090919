@@ -1,0 +1,9 @@
+<h2> Sequences </h2>
+
+<%= link_to "Create New Sequence", new_sequence_path %>
+
+<% @sequences.each do |sequence| %>
+    <h3><%= link_to sequence.name, sequence_postures_path(sequence) %></h3>
+    <p><%= sequence.postures.count %> postures</p>
+    <%= format_duration_to_minutes(sequence.duration) %>
+<% end %>
